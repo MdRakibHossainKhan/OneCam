@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">OneCam</string>
+    <string name="capture_button">Capture</string>
+    <string name="torch_button">Torch</string>
 </resources>

@@ -23,4 +23,7 @@
     <!--  Capture Button Sizes  -->
     <dimen name="capture_button_size">64dp</dimen>
     <dimen name="capture_button_margin">24dp</dimen>
+
+    <!--  Flash Button Sizes  -->
+    <dimen name="flash_button_size">48dp</dimen>
 </resources>

@@ -7,7 +7,16 @@ import android.util.Log
 import android.view.KeyEvent
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.camera.core.*
+import androidx.camera.core.AspectRatio
+import androidx.camera.core.CameraControl
+import androidx.camera.core.CameraInfo
+import androidx.camera.core.CameraSelector
+import androidx.camera.core.ImageAnalysis
+import androidx.camera.core.ImageCapture
+import androidx.camera.core.ImageCaptureException
+import androidx.camera.core.ImageProxy
+import androidx.camera.core.Preview
+import androidx.camera.core.TorchState
 import androidx.camera.lifecycle.ProcessCameraProvider
 import androidx.camera.view.PreviewView
 import androidx.core.content.ContextCompat
@@ -17,7 +26,7 @@ import com.rakib.onecam.databinding.ActivityMainBinding
 import java.io.File
 import java.nio.ByteBuffer
 import java.text.SimpleDateFormat
-import java.util.*
+import java.util.Locale
 import java.util.concurrent.Executors
 import java.util.concurrent.TimeUnit
 
@@ -208,6 +217,7 @@ class MainActivity : AppCompatActivity() {
                 cameraControl.setLinearZoom(linearZoom)
                 true
             }
+
             KeyEvent.KEYCODE_VOLUME_DOWN -> {
                 if (linearZoom >= 0.1) {
                     linearZoom -= 0.1f
@@ -215,6 +225,7 @@ class MainActivity : AppCompatActivity() {
                 cameraControl.setLinearZoom(linearZoom)
                 true
             }
+
             else -> super.onKeyDown(keyCode, event)
         }
     }

@@ -7,12 +7,13 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/black"
         tools:context=".MainActivity">
 
         <androidx.camera.view.PreviewView
             android:id="@+id/previewView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -32,9 +33,9 @@
 
         <ImageButton
             android:id="@+id/camera_torch_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
+            android:layout_width="@dimen/flash_button_size"
+            android:layout_height="@dimen/flash_button_size"
+            android:layout_margin="@dimen/margin_mid"
             android:background="?selectableItemBackgroundBorderless"
             android:contentDescription="@string/torch_button"
             android:src="@drawable/ic_flash_off_24dp"

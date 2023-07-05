@@ -147,6 +147,7 @@ class MainActivity : AppCompatActivity() {
 
             cameraControl = camera.cameraControl
             cameraInfo = camera.cameraInfo
+
             setTorchStateObserver()
             setZoomStateObserver()
         }, ContextCompat.getMainExecutor(this))
@@ -195,6 +196,7 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(
                     this, "Permissions not granted by the user.", Toast.LENGTH_SHORT
                 ).show()
+
                 finish()
             }
         }
@@ -241,6 +243,7 @@ class MainActivity : AppCompatActivity() {
             rewind()    // Rewind the buffer to zero
             val data = ByteArray(remaining())
             get(data)   // Copy the buffer into a byte array
+
             return data // Return the byte array
         }
 
@@ -262,6 +265,7 @@ class MainActivity : AppCompatActivity() {
                 // Update timestamp of last analyzed frame
                 lastAnalyzedTimestamp = currentTimestamp
             }
+
             image.close()
         }
     }

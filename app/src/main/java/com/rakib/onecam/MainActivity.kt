@@ -33,7 +33,7 @@ import java.util.concurrent.TimeUnit
 private const val REQUEST_CODE_PERMISSIONS = 10
 
 // An array of all the permissions specified in the manifest
-private val REQUIRED_PERMISSIONS =
+private val requiredPermissions =
     arrayOf(android.Manifest.permission.CAMERA, android.Manifest.permission.WRITE_EXTERNAL_STORAGE)
 
 class MainActivity : AppCompatActivity() {
@@ -64,7 +64,7 @@ class MainActivity : AppCompatActivity() {
             previewView.post { startCamera() }
         } else {
             requestPermissions(
-                REQUIRED_PERMISSIONS, REQUEST_CODE_PERMISSIONS
+                requiredPermissions, REQUEST_CODE_PERMISSIONS
             )
         }
 
@@ -183,7 +183,7 @@ class MainActivity : AppCompatActivity() {
 
     /**
      * Process result from permission request dialog box, has the request
-     * been granted? If yes, start Camera. Otherwise display a toast
+     * been granted? If yes, start Camera. Otherwise display a toast.
      */
     override fun onRequestPermissionsResult(
         requestCode: Int, permissions: Array<out String>, grantResults: IntArray
@@ -203,9 +203,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     /**
-     * Check if all permission specified in the manifest have been granted
+     * Check if all permission specified in the manifest have been granted.
      */
-    private fun allPermissionsGranted() = REQUIRED_PERMISSIONS.all {
+    private fun allPermissionsGranted() = requiredPermissions.all {
         ContextCompat.checkSelfPermission(this, it) == PackageManager.PERMISSION_GRANTED
     }
 

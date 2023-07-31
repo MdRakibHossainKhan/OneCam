@@ -216,6 +216,7 @@ class MainActivity : AppCompatActivity() {
                 if (linearZoom <= 0.9) {
                     linearZoom += 0.1f
                 }
+
                 cameraControl.setLinearZoom(linearZoom)
                 true
             }
@@ -224,6 +225,7 @@ class MainActivity : AppCompatActivity() {
                 if (linearZoom >= 0.1) {
                     linearZoom -= 0.1f
                 }
+
                 cameraControl.setLinearZoom(linearZoom)
                 true
             }
@@ -261,7 +263,7 @@ class MainActivity : AppCompatActivity() {
                 // Compute average luminance for the image
                 val luma = pixels.average()
                 // Log the new luma value
-                Log.d("CameraXApp", "Average luminosity: $luma")
+                Log.d("OneCamApp", "Average luminosity: $luma")
                 // Update timestamp of last analyzed frame
                 lastAnalyzedTimestamp = currentTimestamp
             }
